@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 33%, #fb923c 100%);
+}
+
+/* Smooth shadows */
+.shadow-soft {
+  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08), 0 2px 8px rgba(2, 6, 23, 0.06);
+}
+
+/***** Components *****/
+.container-section {
+  @apply container px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl font-semibold tracking-tight;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full bg-brand-50 text-brand-700 ring-1 ring-brand-200 px-3 py-1 text-sm font-medium;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 font-semibold transition-colors shadow-soft;
+}
+
+.button-secondary {
+  @apply inline-flex items-center justify-center rounded-xl bg-white text-slate-900 ring-1 ring-slate-200 hover:ring-slate-300 px-5 py-3 font-semibold transition-colors;
+}
+
+.card {
+  @apply rounded-2xl bg-white ring-1 ring-slate-200 shadow-soft;
+}
+
+/* Fancy gradient border helper */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 1.25rem; /* match rounded-2xl */
+  background: var(--gradient);
+  z-index: -1;
+}
